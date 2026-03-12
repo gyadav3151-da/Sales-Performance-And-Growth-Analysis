@@ -1,3 +1,8 @@
+-- Sales Performance & Growth Analysis
+-- Author: Gaurav Yadav
+-- Description: SQL scripts used for data preparation and analysis
+-- Dataset: Superstore Sales Dataset
+
 /*
 ---------------------------------------------------------
 BASIC DATASET OVERVIEW
