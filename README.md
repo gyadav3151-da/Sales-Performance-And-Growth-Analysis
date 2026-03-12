@@ -34,7 +34,7 @@ Additional preprocessing to ensure reliable SQL ingestion:
 - Created a Calendar table to assist grouping when building dashboard
 - Resulting dataset is fully optimised for analytical quering
 
-##  SQL Analysis Insights
+## 💡 SQL Analysis Insights
 - The dataset contains **9,994 transactions across 793 unique customers**, indicating a strong base of repeat customers and    highlighting the importance of **customer retention** for sustained revenue.
 - The business generated **$2.3M in total sales with an overall profit margin of approximately 12%**, providing a healthy      baseline for profitability.
 - **Sales demonstrate steady year-over-year growth**, accompanied by improving profit margins, suggesting expanding demand     and improving operational efficiency.
