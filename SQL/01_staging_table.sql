@@ -1,13 +1,10 @@
 -- Sales Performance & Growth Analysis
 -- Author: Gaurav Yadav
--- Description: SQL scripts used for data preparation and analysis
--- Dataset: Superstore Sales Dataset
 
 /*
 ==================================================
 SUPERSTORE SALES – STAGING TABLE
 ==================================================
-
 This script creates a staging table used to import
 raw sales data from a CSV file before performing
 data cleaning and transformation.
@@ -111,7 +108,7 @@ TABLOCK
     table during the insert operation.
 */
 BULK INSERT Superstore_sales_staging
-FROM 'C:\Users\Dell\Desktop\Study\Excel\Portfolio\Self\Sales Performance & Growth Analysis\Superstore_sales_sql_ready.csv'
+FROM 'C:\Path\To\Your\Superstore_sales_sql_ready.csv'
 WITH (
 	FIRSTROW = 2,
 	FIELDTERMINATOR = '|',
@@ -128,7 +125,7 @@ VALIDATE DATA LOAD
 Checks the total number of records loaded into
 the staging table.
 */
-SELECT COUNT(*)
+SELECT COUNT(*) AS total_rows
 FROM Superstore_sales_staging;
 
 
@@ -141,11 +138,27 @@ missing after import.
 */
 SELECT *
 FROM Superstore_sales_staging
-WHERE ROW_ID IS NULL OR Order_ID IS NULL OR Order_Date IS NULL OR Ship_Date IS NULL OR Ship_Mode IS NULL OR
-	Customer_ID IS NULL OR Customer_Name IS NULL OR Segment IS NULL OR Country IS NULL OR City IS NULL OR
-	State IS NULL OR Postal_Code IS NULL OR Region IS NULL OR Product_ID IS NULL OR Category IS NULL OR
-	Sub_Category IS NULL OR Product_Name IS NULL OR Quantity IS NULL OR Sales IS NULL OR Discount IS NULL OR
-	Profit IS NULL;
+WHERE ROW_ID IS NULL OR ROW_ID = '' OR
+	Order_ID IS NULL OR Order_ID = '' OR 
+	Order_Date IS NULL OR Order_Date = '' OR 
+	Ship_Date IS NULL OR Ship_Date = '' OR 
+	Ship_Mode IS NULL OR Ship_Mode = '' OR
+	Customer_ID IS NULL OR Customer_ID = '' OR
+	Customer_Name IS NULL OR Customer_Name = '' OR
+	Segment IS NULL OR Segment = '' OR
+	Country IS NULL OR Country = '' OR
+	City IS NULL OR City = '' OR
+	[State] IS NULL OR [State] = '' OR
+	Postal_Code IS NULL OR Postal_Code = '' OR
+	Region IS NULL OR Region = '' OR 
+	Product_ID IS NULL OR Product_ID = '' OR 
+	Category IS NULL OR Category = '' OR
+	Sub_Category IS NULL OR Sub_Category = '' OR
+	Product_Name IS NULL OR Product_Name = '' OR
+	Quantity IS NULL OR Quantity = '' OR
+	Sales IS NULL OR Sales = '' OR
+	Discount IS NULL OR Discount = '' OR
+	Profit IS NULL OR Profit = '';
 
 
 /*
@@ -169,4 +182,5 @@ data quality issues in the source file.
 SELECT *
 FROM Superstore_sales_staging
 WHERE TRY_CAST(Quantity AS INT) IS NULL
-  AND Quantity IS NOT NULL;
+	AND Quantity IS NOT NULL
+	AND Quantity <> '';
