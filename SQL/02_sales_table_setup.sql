@@ -1,13 +1,12 @@
 -- Sales Performance & Growth Analysis
 -- Author: Gaurav Yadav
--- Description: SQL scripts used for data preparation and analysis
+-- Description: SQL scripts of final table used for data preparation and analysis
 -- Dataset: Superstore Sales Dataset
 
 /*
 ==================================================
 SUPERSTORE SALES ANALYSIS PROJECT
 ==================================================
-
 This project demonstrates SQL data cleaning,
 data validation, and exploratory data analysis
 on a retail sales dataset.
@@ -132,8 +131,8 @@ DATA VALIDATION
 Ensures the number of records loaded matches the
 original staging table.
 */
-SELECT COUNT(*) FROM Superstore_sales_staging;
-SELECT COUNT(*) FROM Superstore_sales;
+SELECT COUNT(*) AS count_staging FROM Superstore_sales_staging;
+SELECT COUNT(*) AS count_final FROM Superstore_sales;
 
 
 /*
@@ -145,11 +144,27 @@ the data cleaning process.
 */
 SELECT *
 FROM Superstore_sales
-WHERE ROW_ID IS NULL OR Order_ID IS NULL OR Order_Date IS NULL OR Ship_Date IS NULL OR Ship_Mode IS NULL OR
-	Customer_ID IS NULL OR Customer_Name IS NULL OR Segment IS NULL OR Country IS NULL OR City IS NULL OR
-	State IS NULL OR Postal_Code IS NULL OR Region IS NULL OR Product_ID IS NULL OR Category IS NULL OR
-	Sub_Category IS NULL OR Product_Name IS NULL OR Quantity IS NULL OR Sales IS NULL OR Discount IS NULL OR
-	Profit IS NULL;
+WHERE ROW_ID IS NULL OR ROW_ID = '' OR
+	Order_ID IS NULL OR Order_ID = '' OR 
+	Order_Date IS NULL OR Order_Date = '' OR 
+	Ship_Date IS NULL OR Ship_Date = '' OR 
+	Ship_Mode IS NULL OR Ship_Mode = '' OR
+	Customer_ID IS NULL OR Customer_ID = '' OR
+	Customer_Name IS NULL OR Customer_Name = '' OR
+	Segment IS NULL OR Segment = '' OR
+	Country IS NULL OR Country = '' OR
+	City IS NULL OR City = '' OR
+	[State] IS NULL OR [State] = '' OR
+	Postal_Code IS NULL OR Postal_Code = '' OR
+	Region IS NULL OR Region = '' OR 
+	Product_ID IS NULL OR Product_ID = '' OR 
+	Category IS NULL OR Category = '' OR
+	Sub_Category IS NULL OR Sub_Category = '' OR
+	Product_Name IS NULL OR Product_Name = '' OR
+	Quantity IS NULL OR Quantity = '' OR
+	Sales IS NULL OR Sales = '' OR
+	Discount IS NULL OR Discount = '' OR
+	Profit IS NULL OR Profit = '';
 
 
 /*
