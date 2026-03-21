@@ -1,13 +1,11 @@
 -- Sales Performance & Growth Analysis
 -- Author: Gaurav Yadav
--- Description: SQL scripts used for data preparation and analysis
--- Dataset: Superstore Sales Dataset
+-- Description: SQL scripts used for creating calendar table for further grouping
 
 /* 
 ==================================================
 CALENDAR TABLE CREATION
 ==================================================
-
 Creates a calendar (date dimension) table used for
 time-based analysis in the sales dataset.
 
@@ -29,6 +27,12 @@ SQL and Power BI.
 SELECTING DATABASE
 --------------------------------------------------
 */
+IF DB_ID('SalesAnalysisDB') IS NULL
+BEGIN
+    CREATE DATABASE SalesAnalysisDB;
+END
+GO
+
 USE SalesAnalysisDB;
 GO
 
