@@ -100,8 +100,12 @@ The dashboard supports filtering by:
 - Customer Segment
 
 This allows users to dynamically explore performance across different dimensions of the business.
+
 ## 🛠 Tools Used
 - **Excel** - initial cleaning
 - **Python(Pandas)** - data transformation and CSV preparation
 - **SQL Server** - data storage and analysis
 - **Power BI** - dashboard development and data visualization
+
+## 👤 Author
+Gaurav Yadav 
