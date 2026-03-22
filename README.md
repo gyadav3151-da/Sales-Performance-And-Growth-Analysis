@@ -65,7 +65,7 @@ Provides a high-level summary of business performance.
 
 📷 Dashboard Preview:
 
-![Executive Overview](Images/SDA_P1_Exec_Overview.png)
+![Executive Overview](05_Images/01_Exec_Overview.png)
 
 #### 2️⃣ Product Performance
 Focuses on product-level profitability and performance.
@@ -77,7 +77,7 @@ Focuses on product-level profitability and performance.
 
 📷 Dashboard Preview:
 
-![Product Performance](Images/SDA_P2_Product_Analysis.png)
+![Product Performance](05_Images/02_Product_Analysis.png)
 
 #### 3️⃣ Customer Analysis
 Analyzes customer purchasing behavior and segment performance.
@@ -90,7 +90,7 @@ Analyzes customer purchasing behavior and segment performance.
 
 📷 Dashboard Preview
 
-![Customer Analysis](Images/SDA_P3_Customer_Analysis.png)
+![Customer Analysis](05_Images/03_Customer_Analysis.png)
 
 #### Interactive Features
 The dashboard supports filtering by:
